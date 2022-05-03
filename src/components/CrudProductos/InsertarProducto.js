@@ -7,20 +7,24 @@ export default class InsertarProducto extends Component {
 
     cajaNumRef = React.createRef();
     cajaNomRef = React.createRef();
-    cajaDirRef = React.createRef();
-    cajaClaRef = React.createRef();
+    cajaFalRef = React.createRef();
+    cajaEquRef = React.createRef();
+    cajaEstRef = React.createRef();
 
     state = { status: false }
 
     nuevoProducto = (e) => {
         e.preventDefault();
         var nom = this.cajaNomRef.current.value;
-        var equ = this.cajaDirRef.current.value;
-        var est = this.cajaClaRef.current.value;
+        var fal = this.cajaFalRef.current.value;
+        var equ = this.cajaEquRef.current.value;
+        var est = this.cajaEstRef.current.value;
         var producto = {
             nombre: nom
+            , falla: fal
             , equipo: equ
             , estadoorden: est
+            
         };
         var url = Global.urlproductos + '/productos';
         axios.post(url, producto).then(res => {
@@ -38,10 +42,12 @@ export default class InsertarProducto extends Component {
                 <form onSubmit={this.nuevoProducto} style={{width: "50%", margin: "auto"}}>
                     <label>Nombre: </label>
                     <input type="text" name="cajanom" className="form-control" ref={this.cajaNomRef} />
+                    <label>Fallas: </label>
+                    <input type="text" name="cajafal" className="form-control" ref={this.cajaFalRef} />
                     <label>Equipo: </label>
-                    <input type="text" name="cajadir" className="form-control" ref={this.cajaDirRef} />
+                    <input type="text" name="cajaequ" className="form-control" ref={this.cajaEquRef} />
                     <label>Estado Orden: </label>
-                    <input type="text" name="cajatel" className="form-control" ref={this.cajaClaRef} /><br />
+                    <input type="text" name="cajaest" className="form-control" ref={this.cajaEstRef} /><br />
                     <button className="btn btn-success">Añadir</button>
                 </form>
             </div>

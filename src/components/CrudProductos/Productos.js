@@ -35,6 +35,7 @@ export default class Productos extends Component {
                         <tr>
                             <th>Id Producto</th>
                             <th>Nombre</th>
+                            <th>Fallas</th>
                             <th>Equipo</th>
                             <th>Estado Orden</th>
                             <th>Detalles</th>
@@ -50,6 +51,7 @@ export default class Productos extends Component {
                                     <tr key={i}>
                                         <td>{prod.id}</td>
                                         <td style={{fontWeight: "bold"}}>{prod.nombre}</td>
+                                        <td>{prod.falla}</td>
                                         <td>{prod.equipo}</td>
                                         <td>{prod.estadoorden}</td>
                                         <td>

@@ -17,7 +17,7 @@ export default class DeleteProducto extends Component {
 
     render() {
         if(this.state.status === true){
-            return <Redirect to="/" />
+            return <Redirect to="/reparaciones" />
         }
         return (
             <div>
