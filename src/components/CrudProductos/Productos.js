@@ -38,9 +38,9 @@ export default class Productos extends Component {
                             <th>Fallas</th>
                             <th>Equipo</th>
                             <th>Estado Orden</th>
-                            <th>Detalles</th>
-                            <th>Modificar</th>
-                            <th>Eliminar</th>
+                            <th>Detalle Orden</th>
+                            <th>Modif. Orden</th>
+                            <th>Eliminar Orden</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,7 +57,7 @@ export default class Productos extends Component {
                                         <td>
                                             <NavLink to={"/detalles/" + prod.id}>Detalles</NavLink>
                                         </td>
-                                        <td>
+                                        <td> 
                                             <NavLink to={"/update/" + prod.id}>Modificar</NavLink>
                                         </td>
                                         <td>

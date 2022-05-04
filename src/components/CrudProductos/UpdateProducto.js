@@ -3,7 +3,7 @@ import axios from 'axios';
 import Global from '../../Global';
 import { Redirect, NavLink } from 'react-router-dom';
 
-export default class UpdateHospital extends Component {
+export default class Updateproduct extends Component {
 
     cajaNumRef = React.createRef();
     cajaNomRef = React.createRef();
@@ -48,7 +48,7 @@ export default class UpdateHospital extends Component {
                     <input type="number" name="cajanum" className="form-control" ref={this.cajaNumRef}
                         value={this.props.id} readOnly />
                     <label>Nombre: </label>
-                    <input type="text" name="cajanom" className="form-control" ref={this.cajaNomRef} />
+                    <input type="text"  name="cajanom" className="form-control" ref={this.cajaNomRef} defaultValue={this.props.falla} />
                     <label>Fallas: </label>
                     <input type="text" name="cajafal" className="form-control" ref={this.cajaFalRef} />
                     <label>Equipo: </label>
@@ -56,7 +56,9 @@ export default class UpdateHospital extends Component {
                     <label>Estado Orden: </label>
                     <input type="text" name="cajaest" className="form-control" ref={this.cajaEstRef} /><br />
                     <button className="btn btn-success">Modificar</button>
+                    
                 </form>
+               
             </div>
         )
     }

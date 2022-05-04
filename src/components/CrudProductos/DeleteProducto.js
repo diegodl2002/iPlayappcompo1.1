@@ -23,7 +23,7 @@ export default class DeleteProducto extends Component {
             <div>
                 <br />
                 <h1 style={{color: "red"}}>¿Desea eliminar el producto? {this.props.id}?</h1><br />
-                <NavLink to="/" className="btn btn-light">Cancelar</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;
+                <NavLink to="/reparaciones" className="btn btn-light">Cancelar</NavLink>&nbsp;&nbsp;&nbsp;&nbsp;
                 <button onClick={this.eliminarProducto} className="btn btn-danger">Eliminar</button>
             </div>
         )
