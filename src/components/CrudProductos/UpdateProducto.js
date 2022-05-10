@@ -14,7 +14,7 @@ export default class Updateproduct extends Component {
 
     modificarProducto = (e) => {
         e.preventDefault();
-        var num = parseInt(this.cajaNumRef.current.value);
+       /*  var num = parseInt(this.cajaNumRef.current.value); */
         var nom = this.cajaNomRef.current.value;
         var fal = this.cajaFalRef.current.value;
         var equ = this.cajaEquRef.current.value;

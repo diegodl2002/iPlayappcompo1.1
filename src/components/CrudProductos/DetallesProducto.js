@@ -40,8 +40,8 @@ export default class DetallesProducto extends Component {
                         <h3>Fallas: <span style={{color: "green", fontWeight: "bold"}}>{this.state.producto.falla}</span></h3>
                         <h3>Equipo: <span style={{color: "green", fontWeight: "bold"}}>{this.state.producto.equipo}</span></h3>
                         <h3>Estado Orden: <span style={{color: "green", fontWeight: "bold"}}>{this.state.producto.estadoorden}</span></h3>
-                        <NavLink to={"/update/" + this.state.producto.id} className="btn btn-primary">Modificar</NavLink> &nbsp;&nbsp;
-                        <NavLink to={"/delete/" + this.state.producto.id} className="btn btn-danger">Borrar</NavLink>
+                        <NavLink to={"/update/" + this.props.id} className="btn btn-primary">Modificar</NavLink> &nbsp;&nbsp;
+                        <NavLink to={"/delete/" + this.props.id} className="btn btn-danger">Borrar</NavLink>
                     </React.Fragment>
                 )}
             </div>
