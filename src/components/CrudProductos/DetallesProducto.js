@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Global from '../../Global';
 import { NavLink } from 'react-router-dom';
 
 export default class DetallesProducto extends Component {
@@ -11,8 +10,8 @@ export default class DetallesProducto extends Component {
     }
 
     mostrarProducto = () => {
-        var request = "/productos/" + this.props.id;
-        var url = Global.urlproductos + request;
+        
+        var url = 'http://localhost:4000/users/edit/' + this.props.id ;
         axios.get(url).then(res => {
             this.setState({
                 producto: res.data
