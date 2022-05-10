@@ -20,6 +20,7 @@ export default class Router extends Component {
                         <Route exact path="/reparaciones" component={Productos} />
                         <Route exact path="/create" component={InsertarProducto} />
                         <Route exact path="/home" component={Home} />
+                        <Route exact path="/" component={Home} />
                         <Route exact path="/products" component={Proximamente} />
                         <Route exact path="/detalles/:id" render={props => {
                             var id = props.match.params.id;

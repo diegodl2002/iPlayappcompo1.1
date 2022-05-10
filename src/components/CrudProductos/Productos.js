@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Global from '../../Global';
+/* import Global from '../../Global'; */
 import { NavLink } from 'react-router-dom';
 
 export default class Productos extends Component {
@@ -11,9 +11,9 @@ export default class Productos extends Component {
     }
 
     cargarProductos = () => {
-        var url = Global.urlproductos;
-        var request = "/productos";
-        axios.get(url + request).then(res => {
+        /* var url = Global.urlproductos; */
+        /* var request = "/productos"; */
+        axios.get('http://localhost:4000/users').then(res => {
             this.setState({
                 productos: res.data
                 , status: true
@@ -35,6 +35,7 @@ export default class Productos extends Component {
                         <tr>
                             <th>Id Producto</th>
                             <th>Nombre</th>
+                            <th>Fecha</th>
                             <th>Fallas</th>
                             <th>Equipo</th>
                             <th>Estado Orden</th>
@@ -51,6 +52,7 @@ export default class Productos extends Component {
                                     <tr key={i}>
                                         <td>{prod.id}</td>
                                         <td style={{fontWeight: "bold"}}>{prod.nombre}</td>
+                                        <td>{prod.fecha}</td>
                                         <td>{prod.falla}</td>
                                         <td>{prod.equipo}</td>
                                         <td>{prod.estadoorden}</td>

@@ -37,6 +37,7 @@ export default class DetallesProducto extends Component {
                         <NavLink to="/reparaciones" className="btn btn-sm btn-dark">Listado</NavLink>
                         <br /><br />
                         <h3>Nombre: <span style={{color: "green", fontWeight: "bold"}}>{this.state.producto.nombre}</span></h3>
+                        <h3>Fecha: <span style={{color: "green", fontWeight: "bold"}}>{this.state.producto.fecha}</span></h3>
                         <h3>Fallas: <span style={{color: "green", fontWeight: "bold"}}>{this.state.producto.falla}</span></h3>
                         <h3>Equipo: <span style={{color: "green", fontWeight: "bold"}}>{this.state.producto.equipo}</span></h3>
                         <h3>Estado Orden: <span style={{color: "green", fontWeight: "bold"}}>{this.state.producto.estadoorden}</span></h3>

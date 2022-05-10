@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Global from '../../Global';
+/* import Global from '../../Global'; */
 import { Redirect } from 'react-router-dom';
 
 export default class InsertarProducto extends Component {
 
     cajaNumRef = React.createRef();
     cajaNomRef = React.createRef();
+    cajaFecRef = React.createRef();
     cajaFalRef = React.createRef();
     cajaEquRef = React.createRef();
     cajaEstRef = React.createRef();
@@ -17,24 +18,26 @@ export default class InsertarProducto extends Component {
         e.preventDefault();
         var nom = this.cajaNomRef.current.value;
         var fal = this.cajaFalRef.current.value;
+        var fec = this.cajaFecRef.current.value;
         var equ = this.cajaEquRef.current.value;
         var est = this.cajaEstRef.current.value;
         var producto = {
             nombre: nom
+            , fecha: fec
             , falla: fal
             , equipo: equ
             , estadoorden: est
             
         };
-        var url = Global.urlproductos + '/productos';
-        axios.post(url, producto).then(res => {
+        /* var url = Global.urlproductos+'/users/create'; */
+        axios.post('http://localhost:4000/users/create', producto).then(res => {
             this.setState({ status: true });
         });
     }
 
     render() {
         if(this.state.status === true){
-            return <Redirect to="/" />
+            return <Redirect to="/reparaciones" />
         }
         return (
             <div>
@@ -42,6 +45,8 @@ export default class InsertarProducto extends Component {
                 <form onSubmit={this.nuevoProducto} style={{width: "50%", margin: "auto"}}>
                     <label>Nombre: </label>
                     <input type="text" name="cajanom" className="form-control" ref={this.cajaNomRef} />
+                    <label>Fecha: </label>
+                    <input type="date" name="cajafec" className="form-control" ref={this.cajaFecRef} />
                     <label>Fallas: </label>
                     <input type="text" name="cajafal" className="form-control" ref={this.cajaFalRef} />
                     <label>Equipo: </label>
