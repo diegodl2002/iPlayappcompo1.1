@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Global from '../../Global';
 import { Redirect, NavLink } from 'react-router-dom';
 
 export default class DeleteProducto extends Component {
@@ -8,8 +7,7 @@ export default class DeleteProducto extends Component {
     state = { status: false };
 
     eliminarProducto = () => {
-        var request = "/productos/" + this.props.id;
-        var url = Global.urlproductos + request;
+        var url = 'http://localhost:4000/users/delete/' + this.props.id ;
         axios.delete(url).then(res => {
             this.setState({ status: true });
         });

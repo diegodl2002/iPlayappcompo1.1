@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-/* import Global from '../../Global'; */
 import { Redirect } from 'react-router-dom';
 
 export default class InsertarProducto extends Component {
@@ -29,7 +28,7 @@ export default class InsertarProducto extends Component {
             , estadoorden: est
             
         };
-        /* var url = Global.urlproductos+'/users/create'; */
+       
         axios.post('http://localhost:4000/users/create', producto).then(res => {
             this.setState({ status: true });
         });
