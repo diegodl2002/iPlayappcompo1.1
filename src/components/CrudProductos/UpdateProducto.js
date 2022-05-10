@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-/* import Global from '../../Global'; */
 import { Redirect, NavLink } from 'react-router-dom';
 
 export default class Updateproduct extends Component {
@@ -21,15 +20,13 @@ export default class Updateproduct extends Component {
         var equ = this.cajaEquRef.current.value;
         var est = this.cajaEstRef.current.value;
         var producto = {
-            _id: num
-            , nombre: nom
+            nombre: nom
             , falla: fal
             , equipo: equ
             , estadoorden: est
         };
-        /* var request = "/productos/" + num; */
-        /* var url = Global.urlproductos + request;  */
-        axios.put('http://localhost:4000/users' + num, producto).then(res => {
+                var url = 'http://localhost:4000/users/update/' + this.props.id ;
+        axios.put(url, producto).then(res => {
             this.setState({status: true});
         });
     }
