@@ -42,7 +42,7 @@ export default class InsertarProducto extends Component {
             <div>
                 <h1>Nuevo Ingreso</h1>
                 <form onSubmit={this.nuevoProducto} style={{width: "50%", margin: "auto"}}>
-                    <label>Nombre: </label>
+                    <label >Nombre: </label>
                     <input type="text" name="cajanom" className="form-control" ref={this.cajaNomRef} />
                     <label>Fecha: </label>
                     <input type="date" name="cajafec" className="form-control" ref={this.cajaFecRef} />

@@ -29,6 +29,7 @@ export default class Productos extends Component {
             <div>
                 <hr />
                 <h1>Reparaciones</h1>
+                <NavLink to="/create" className="btn btn-primary">Nuevo Ingreso</NavLink>
                 <table className="table table-info">
                     <thead className="thead-dark">
                         <tr>
@@ -49,9 +50,9 @@ export default class Productos extends Component {
                             this.state.productos.map((prod, i) => {
                                 return(
                                     <tr key={i}>
-                                        <td>{prod._id}</td>
-                                        <td style={{fontWeight: "bold"}}>{prod.nombre}</td>
-                                        <td></td>
+                                        <td style={{width: '100px', whiteSpace: 'nowrap', overflow: 'hidden'}}>{prod._id}</td>
+                                        <td style={{fontWeight: "bold", textTransform: 'capitalize'}}>{prod.nombre}</td>
+                                        <td>{prod.fecha}</td>
                                         <td>{prod.falla}</td>
                                         <td>{prod.equipo}</td>
                                         <td>{prod.estadoorden}</td>
